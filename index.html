@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GOATED Drag Racing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">BUILD • TUNE • LAUNCH</p>
+        <h1>GOATED <span>DRAG</span></h1>
+      </div>
+      <div class="wallet"><small>CASH</small><strong id="cash">$25,000</strong></div>
+    </header>
+
+    <nav>
+      <button class="tab active" data-view="garage">Garage</button>
+      <button class="tab" data-view="track">Drag Strip</button>
+      <button class="tab" data-view="rankings">Rankings</button>
+    </nav>
+
+    <main>
+      <section id="garage" class="view active">
+        <aside class="car-card">
+          <p class="eyebrow">YOUR BUILD</p>
+          <div id="carSilhouette" class="car silhouette"></div>
+          <h2 id="buildName">Street 2-Door</h2>
+          <div class="stats">
+            <div><small>POWER</small><strong id="powerStat">420 HP</strong></div>
+            <div><small>WEIGHT</small><strong id="weightStat">3,100 lb</strong></div>
+            <div><small>1/4 MILE</small><strong id="quarterStat">12.20 s</strong></div>
+          </div>
+        </aside>
+
+        <div class="builder">
+          <div class="builder-top">
+            <h2>Engine Builder</h2>
+            <span id="tierBadge" class="badge">Street</span>
+          </div>
+          <div id="parts" class="parts"></div>
+        </div>
+      </section>
+
+      <section id="track" class="view">
+        <div class="track-panel">
+          <div class="finish-board">
+            <span>RIVAL</span>
+            <strong id="rivalName">Midnight 440</strong>
+          </div>
+          <div class="lane left"><div id="playerCar" class="car car-small"></div></div>
+          <div class="lane right"><div id="rivalCar" class="car rival-small"></div></div>
+          <div id="startLights" class="lights"><i></i><i></i><i></i></div>
+          <button id="raceButton" class="race-button">START ENGINE</button>
+        </div>
+        <div class="race-result">
+          <p class="eyebrow">LATEST RUN</p>
+          <h2 id="resultTime">Ready to race</h2>
+          <p id="resultDetail">Your 1/4-mile time is generated from power, weight, and tune.</p>
+        </div>
+      </section>
+
+      <section id="rankings" class="view">
+        <div class="ranking-column">
+          <p class="eyebrow">RANKED</p>
+          <h2>1/4 Mile</h2>
+          <div id="quarterRanks"></div>
+        </div>
+        <div class="ranking-column">
+          <p class="eyebrow">RANKED</p>
+          <h2>Highest Horsepower</h2>
+          <div id="horsepowerRanks"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

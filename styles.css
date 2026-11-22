@@ -1,0 +1,33 @@
+:root {
+  --orange: #ff6b00;
+  --black: #090a0d;
+  --panel: #15171c;
+  --line: #292c34;
+  --muted: #949aa7;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #08090b; color: #f5f5f5; font-family: Arial, Helvetica, sans-serif; }
+body::before { content:""; position:fixed; inset:0; pointer-events:none; background: radial-gradient(circle at 20% 10%, #29231d 0, transparent 25%), linear-gradient(135deg, transparent 60%, #100e0b 100%); }
+.shell { position:relative; max-width:1180px; min-height:100vh; margin:auto; padding:28px; }
+header { display:flex; justify-content:space-between; align-items:center; padding:8px 4px 22px; }
+h1 { margin:2px 0; font-size:38px; font-style:italic; letter-spacing:-2px; }
+h1 span, .eyebrow { color:var(--orange); }
+.eyebrow { margin:0 0 5px; font-size:11px; font-weight:800; letter-spacing:3px; }
+.wallet { text-align:right; }.wallet small { display:block; color:var(--muted); }.wallet strong { color:#62d78b; font-size:20px; }
+nav { display:flex; border-bottom:1px solid var(--line); margin-bottom:22px; }
+.tab { border:0; border-bottom:3px solid transparent; background:none; color:var(--muted); padding:12px 28px; font-weight:bold; cursor:pointer; }
+.tab.active { color:white; border-bottom-color:var(--orange); }
+.view { display:none; }.view.active { display:grid; }
+#garage { grid-template-columns:340px 1fr; gap:20px; }.car-card, .builder, .ranking-column, .race-result { background:rgba(21,23,28,.96); border:1px solid var(--line); border-radius:12px; }
+.car-card { padding:20px; }.car-card h2 { margin:10px 0 18px; }
+.car { position:relative; height:120px; background:linear-gradient(145deg,#ec3b25,#9a1d12); clip-path:polygon(8% 62%,18% 47%,38% 43%,48% 18%,72% 19%,82% 44%,94% 51%,96% 75%,6% 75%); }
+.car::before,.car::after { content:""; position:absolute; bottom:10px; width:44px; height:44px; border-radius:50%; background:radial-gradient(circle,#8b9098 0 19%,#101116 20% 52%,#050505 53%); }
+.car::before { left:39px }.car::after { right:39px }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }.stats div { padding-top:14px }.stats small,.stats strong { display:block }.stats small { color:var(--muted); font-size:9px }.stats strong { margin-top:5px; font-size:13px }
+.builder { padding:20px; }.builder-top { display:flex; justify-content:space-between; align-items:center; }.builder-top h2 { margin:0 }.badge { background:#2a1c12; color:#ff9a50; border:1px solid #603819; border-radius:20px; padding:6px 12px; font-size:12px }
+.parts { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px; }.part { display:flex; flex-direction:column; background:#1b1d23; border:1px solid var(--line); border-radius:8px; padding:10px; }.part label { color:var(--muted); font-size:11px; font-weight:bold; text-transform:uppercase }.part select { margin-top:8px; width:100%; color:white; background:#0d0f13; border:1px solid #343740; border-radius:5px; padding:10px }
+.track-panel { height:430px; position:relative; overflow:hidden; background:linear-gradient(#30343b 0 18%,#111318 18% 67%,#090a0c 67%); border:1px solid var(--line); border-radius:12px 12px 0 0; }.track-panel::after { content:""; position:absolute; left:0; right:0; top:67%; border-top:4px dashed #ddd; opacity:.45 }.lane { position:absolute; top:68%; width:50%; }.lane.left { left:0 }.lane.right { right:0 }.car-small,.rival-small { width:240px; height:105px }.rival-small { margin-left:auto; background:linear-gradient(145deg,#3360a8,#18274a) }.finish-board { position:absolute; right:20px; top:26px; background:#0b0c0f; border:1px solid var(--line); padding:10px 14px; text-align:right }.finish-board span { display:block; color:var(--muted); font-size:10px }.finish-board strong { color:var(--orange) }
+.lights { position:absolute; left:50%; top:25px; display:flex; gap:8px; transform:translateX(-50%) }.lights i { width:20px; height:20px; border-radius:50%; background:#421711 }.lights i.lit { background:#ff3b20; box-shadow:0 0 16px #ff3b20 }
+.race-button { position:absolute; z-index:3; left:50%; bottom:24px; transform:translateX(-50%); border:0; border-radius:6px; background:var(--orange); color:white; font-weight:bold; padding:12px 22px; cursor:pointer }.race-result { border-radius:0 0 12px 12px; border-top:0; padding:18px 22px }.race-result h2 { margin:4px 0 8px }.race-result p:last-child { color:var(--muted); margin:0 }
+#rankings { grid-template-columns:1fr 1fr; gap:20px }.ranking-column { padding:22px }.rank-row { display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--line); padding:12px 4px }.rank-number { color:var(--orange); width:30px }.rank-name { flex:1 }.rank-value { font-weight:bold }.rank-row.you { background:#23180f; margin:0 -8px; padding-left:12px; padding-right:12px }
+@media(max-width:760px){.shell{padding:16px}#garage,#rankings{grid-template-columns:1fr}.parts{grid-template-columns:1fr}.car-card{order:2}.track-panel{height:380px}.car-small,.rival-small{width:160px}.stats{gap:8px}}
